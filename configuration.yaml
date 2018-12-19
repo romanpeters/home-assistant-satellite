@@ -1,0 +1,11 @@
+homeassistant:
+  name: Satellite
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+
+mqtt:
+#  discovery: true
+#  broker: core-mosquitto
+
+# hassio:
+
