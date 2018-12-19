@@ -3,9 +3,30 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Amsterdam
 
+# hassio:
+
+# Enable for frontend 
+#frontend:
+#config:
+
+
 mqtt:
 #  discovery: true
 #  broker: core-mosquitto
 
-# hassio:
+
+sensor:
+  - platform: serial_pm
+    serial_device: /dev/ttyUSB0
+    name: Particle Sensor
+    brand: novafitness,sds011
+
+  - platform: miflora
+    mac: 'C4:7C:8D:66:42:FC'
+
+
+device_tracker:
+  - platform: bluetooth_tracker
+  - platform: bluetooth_le_tracker
+
 
