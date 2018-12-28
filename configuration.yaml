@@ -20,11 +20,6 @@ mqtt_eventstream:
   publish_topic: satellite/events
 
 sensor:
-  - platform: serial_pm
-    serial_device: /dev/ttyUSB0
-    name: Particle Sensor
-    brand: novafitness,sds011
-
   - platform: miflora
     mac: 'C4:7C:8D:66:42:FC'
 
