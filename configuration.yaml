@@ -1,11 +1,35 @@
 homeassistant:
   name: Satellite
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 0
   unit_system: metric
   time_zone: Europe/Amsterdam
 
-mqtt:
-#  discovery: true
-#  broker: core-mosquitto
+# Enable for frontend 
+#frontend:
+#config:
 
-# hassio:
+mqtt:
+  broker: 10.10.10.11
+
+mqtt_statestream:
+  base_topic: satellite
+
+mqtt_eventstream:
+  publish_topic: satellite/events
+
+sensor:
+  - platform: serial_pm
+    serial_device: /dev/ttyUSB0
+    name: Particle Sensor
+    brand: novafitness,sds011
+
+  - platform: miflora
+    mac: 'C4:7C:8D:66:42:FC'
+
+device_tracker:
+  - platform: bluetooth_tracker
+#  - platform: bluetooth_le_tracker
+
 
