@@ -2,7 +2,9 @@
 language: python
 python:
 - 3.6.4
+before_install:
+- echo "latitude: '0.0'\nlongitude: '0.0'" > secrets.yaml
 install:
-- "pip3 install homeassistant"
+- pip3 install homeassistant
 script:
-- "hass -c . --script check_config"
+- hass -c . --script check_config
