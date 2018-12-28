@@ -23,6 +23,13 @@ sensor:
   - platform: miflora
     mac: 'C4:7C:8D:66:42:FC'
 
+  - platform: dht
+    sensor: DHT11
+    pin: 2
+    monitored_conditions:
+      - temperature
+      - humidity
+
 device_tracker:
   - platform: bluetooth_tracker
 #  - platform: bluetooth_le_tracker
