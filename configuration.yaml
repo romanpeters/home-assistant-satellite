@@ -16,8 +16,8 @@ mqtt:
 mqtt_statestream:
   base_topic: satellite
 
-mqtt_eventstream:
-  publish_topic: satellite/events
+#mqtt_eventstream:
+#  publish_topic: satellite/events
 
 sensor:
   - platform: miflora
@@ -32,6 +32,5 @@ sensor:
 
 device_tracker:
   - platform: bluetooth_tracker
-#  - platform: bluetooth_le_tracker
-
-
+  - platform: bluetooth_le_tracker
+    track_new_devices: True
