@@ -1,0 +1,5 @@
+.storage/
+.uuid
+home-assistant.log
+known_devices.yaml
+secrets.yaml
