@@ -1,0 +1,11 @@
+[Unit]
+Description=Run BS440 bluetooth scale monitor
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+WorkingDirectory=/srv/bs440
+ExecStart=/srv/bs440/bin/python3 /srv/bs440/BS440.py
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=SDS011 Air Particulate Sensor
+After=network-online.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/srv/sds011/bin/python3 /srv/sds011/run.py
+RemainAfterExit=no
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
